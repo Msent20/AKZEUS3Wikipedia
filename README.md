@@ -25,10 +25,11 @@ project(':wikipediadata').projectDir = new File('libs/WikipediaData')
 ```
 
 3. Sync gradle. 
-4. Add this line as a new Gradle dependency :
+4. Add this lines as a new Gradle dependency :
 
 ```kotlin 
 implementation project(":wikipediadata")
+implementation project(path: ':wikipediadata')
 ```
 
 5. Sync gradle.    
