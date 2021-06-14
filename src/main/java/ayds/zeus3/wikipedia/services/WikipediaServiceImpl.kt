@@ -1,16 +1,16 @@
 package ayds.zeus3.wikipedia.services
 
-import ayds.zeus3.wikipedia.CardImpl
+import ayds.zeus3.wikipedia.ArticleImpl
 import ayds.zeus3.wikipedia.WikipediaService
 import retrofit2.Response
 
 internal class WikipediaServiceImpl(
-    private val wikipediaToCardResolver: WikipediaToCardResolver,
+    private val wikipediaToArticleResolver: WikipediaToArticleResolver,
     private val wikipediaAPI: WikipediaAPI
 ) : WikipediaService {
-    override fun getCard(artistName: String): CardImpl? {
+    override fun getArticle(artistName: String): ArticleImpl? {
         val callResponse = getResponseFromService(artistName)
-        return wikipediaToCardResolver.getCardFromExternalData(callResponse.body())
+        return wikipediaToArticleResolver.getArticleFromExternalData(callResponse.body())
     }
 
     private fun getResponseFromService(query: String): Response<String> {

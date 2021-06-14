@@ -1,5 +1,5 @@
 package ayds.zeus3.wikipedia
 
 interface WikipediaService {
-    fun getCard(artistName: String): CardImpl?
+    fun getArticle(artistName: String): ArticleImpl?
 }

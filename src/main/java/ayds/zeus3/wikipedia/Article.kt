@@ -1,6 +1,6 @@
 package ayds.zeus3.wikipedia
 
-interface Card {
+interface Article {
     val info: String
     val url: String
     val logo_url: String
@@ -8,15 +8,15 @@ interface Card {
     var isLocallyStoraged: Boolean
 }
 
-data class CardImpl(
+data class ArticleImpl(
     override val info: String,
     override val url: String,
     override val logo_url: String,
     override val source: Int,
     override var isLocallyStoraged: Boolean = false
-) : Card
+) : Article
 
-object EmptyCard : Card {
+object EmptyArticle : Article {
     override val info: String = ""
     override val url: String = ""
     override val logo_url: String = ""

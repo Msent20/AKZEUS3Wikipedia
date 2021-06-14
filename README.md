@@ -47,5 +47,5 @@ val wikipediaService: WikipediaService
 You can retrieve the information by passing the name of an artist as a parameter
 
 ```kotlin
-wikipediaService.getCard(artistName)
+wikipediaService.getArticle(artistName)
 ```

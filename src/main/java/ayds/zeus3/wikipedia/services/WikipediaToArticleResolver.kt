@@ -1,11 +1,11 @@
 package ayds.zeus3.wikipedia.services
 
-import ayds.zeus3.wikipedia.CardImpl
+import ayds.zeus3.wikipedia.ArticleImpl
 import com.google.gson.Gson
 import com.google.gson.JsonObject
 
-interface WikipediaToCardResolver {
-    fun getCardFromExternalData(serviceData: String?): CardImpl?
+interface WikipediaToArticleResolver {
+    fun getArticleFromExternalData(serviceData: String?): ArticleImpl?
 }
 
 private const val JSON_SNIPPET = "snippet"
@@ -16,12 +16,12 @@ private const val JSON_SEARCH = "search"
 private const val LOGO_URL = "https://upload.wikimedia.org/wikipedia/commons/8/8c/Wikipedia-logo-v2-es.png"
 private const val SOURCE = 1
 
-internal class JsonToCardResolver : WikipediaToCardResolver {
+internal class JsonToArticleResolver : WikipediaToArticleResolver {
 
-    override fun getCardFromExternalData(serviceData: String?): CardImpl? =
+    override fun getArticleFromExternalData(serviceData: String?): ArticleImpl? =
         try {
             serviceData?.getResponseJson()?.getArtistJson()?.let { item ->
-                CardImpl(
+                ArticleImpl(
                     item.getInfo(),
                     item.getUrl(),
                     LOGO_URL,
