@@ -25,11 +25,10 @@ project(':wikipediadata').projectDir = new File('libs/WikipediaData')
 ```
 
 3. Sync gradle. 
-4. Add this lines as a new Gradle dependency :
+4. Add this line as a new Gradle dependency :
 
 ```kotlin 
 implementation project(":wikipediadata")
-implementation project(path: ':wikipediadata')
 ```
 
 5. Sync gradle.    
@@ -47,5 +46,16 @@ val wikipediaService: WikipediaService
 You can retrieve the information by passing the name of an artist as a parameter
 
 ```kotlin
-wikipediaService.getArticle(artistName)
+wikipediaService.getCard(artistName)
 ```
+## Exceptional cases responses
+______________
+
+In case of lose internet connection the library returns   
+
+ ```kotlin
+null
+```
+
+In case the requested article is not found, the library returns any other related article.
+
