@@ -14,7 +14,6 @@ private const val WIKIPEDIA_SHORT_URL = "https://en.wikipedia.org/?curid="
 private const val JSON_QUERY = "query"
 private const val JSON_SEARCH = "search"
 private const val LOGO_URL = "https://upload.wikimedia.org/wikipedia/commons/8/8c/Wikipedia-logo-v2-es.png"
-private const val SOURCE = 1
 
 internal class JsonToArticleResolver : WikipediaToArticleResolver {
 
@@ -24,8 +23,7 @@ internal class JsonToArticleResolver : WikipediaToArticleResolver {
                 ArticleImpl(
                     item.getInfo(),
                     item.getUrl(),
-                    LOGO_URL,
-                    SOURCE
+                    LOGO_URL
                 )
             }
         } catch (e: Exception) {
