@@ -1,10 +1,10 @@
-package ayds.zeus3.wikipedia.services
+package ayds.zeus3.wikipedia.service
 
 import ayds.zeus3.wikipedia.ArticleImpl
 import com.google.gson.Gson
 import com.google.gson.JsonObject
 
-interface WikipediaToArticleResolver {
+internal interface WikipediaToArticleResolver {
     fun getArticleFromExternalData(serviceData: String?): ArticleImpl?
 }
 

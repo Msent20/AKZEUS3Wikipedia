@@ -1,4 +1,4 @@
-package ayds.zeus3.wikipedia.services
+package ayds.zeus3.wikipedia.service
 
 import retrofit2.Call
 import retrofit2.http.GET

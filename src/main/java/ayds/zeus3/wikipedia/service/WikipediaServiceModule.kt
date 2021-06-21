@@ -1,10 +1,10 @@
-package ayds.zeus3.wikipedia.services
+package ayds.zeus3.wikipedia.service
 
 import ayds.zeus3.wikipedia.WikipediaService
 import retrofit2.Retrofit
 import retrofit2.converter.scalars.ScalarsConverterFactory
 
-object WikipediaServiceModule {
+internal object WikipediaServiceModule {
     private const val URL_WIKIPEDIA = "https://en.wikipedia.org/w/"
     private val wikipediaAPIretrofit = Retrofit.Builder()
         .baseUrl(URL_WIKIPEDIA)
