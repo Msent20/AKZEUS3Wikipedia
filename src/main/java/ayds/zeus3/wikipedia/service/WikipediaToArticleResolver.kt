@@ -1,11 +1,11 @@
 package ayds.zeus3.wikipedia.service
 
-import ayds.zeus3.wikipedia.ArticleImpl
+import ayds.zeus3.wikipedia.WikipediaArticle
 import com.google.gson.Gson
 import com.google.gson.JsonObject
 
 internal interface WikipediaToArticleResolver {
-    fun getArticleFromExternalData(serviceData: String?): ArticleImpl?
+    fun getArticleFromExternalData(serviceData: String?): WikipediaArticle?
 }
 
 private const val JSON_SNIPPET = "snippet"
@@ -17,10 +17,10 @@ private const val LOGO_URL = "https://upload.wikimedia.org/wikipedia/commons/8/8
 
 internal class JsonToArticleResolver : WikipediaToArticleResolver {
 
-    override fun getArticleFromExternalData(serviceData: String?): ArticleImpl? =
+    override fun getArticleFromExternalData(serviceData: String?): WikipediaArticle? =
         try {
             serviceData?.getResponseJson()?.getArtistJson()?.let { item ->
-                ArticleImpl(
+                WikipediaArticle(
                     item.getInfo(),
                     item.getUrl(),
                     LOGO_URL
