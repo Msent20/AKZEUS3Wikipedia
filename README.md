@@ -38,14 +38,14 @@ implementation project(":wikipediadata")
 
 Import module
 ```kotlin
-import .../wikipedia.WikipediaModule 
+import ayds.zeus3.wikipedia.WikipediaModule 
 ```
 
 
-Instantiate an instance of the WikipediaService class.
+Get an instance of the WikipediaService class.
 
 ```kotlin 
-val wikipediaService: WikipediaModule.WikipediaService
+val wikipediaService: WikipediaModule.WikipediaService = WikipediaServiceModule.WikipediaService
 ```
 
 You can retrieve the information by passing the name of an artist as a parameter
