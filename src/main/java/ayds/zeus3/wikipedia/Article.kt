@@ -12,8 +12,3 @@ data class ArticleImpl(
     override val logoUrl: String
 ) : Article
 
-object EmptyArticle : Article {
-    override val info: String = ""
-    override val url: String = ""
-    override val logoUrl: String = ""
-}

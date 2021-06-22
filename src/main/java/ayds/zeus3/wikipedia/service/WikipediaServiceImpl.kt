@@ -1,4 +1,4 @@
-package ayds.zeus3.wikipedia.services
+package ayds.zeus3.wikipedia.service
 
 import ayds.zeus3.wikipedia.ArticleImpl
 import ayds.zeus3.wikipedia.WikipediaService
